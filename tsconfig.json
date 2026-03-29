@@ -1,0 +1,27 @@
+{
+  "include": ["src", "scripts"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "target": "es2016",
+    "noEmitOnError": false,
+    "module": "NodeNext",
+    "rootDir": "./src",
+    "moduleResolution": "nodenext",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+    // "baseUrl": ".",
+    // "paths": {
+    //   "@src/*": ["src/*"],
+    //   "@app/*": ["src/app/*"],
+    //   "@prisma/*": ["prisma/*"],
+    //   "@utils/*": ["src/utils/*"],
+    //   "@config/*": ["src/config/*"],
+    //   "@constant/*": ["src/constant/*"],
+    //   "@emails/*": ["src/emails/*"],
+    //   "@errors/*": ["src/errors/*"]
+    // }
+  }
+}
