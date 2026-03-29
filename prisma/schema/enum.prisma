@@ -1,0 +1,19 @@
+enum UserRole {
+  ADMIN
+  HR
+  MANAGER
+  EMPLOYEE
+  ACCOUNTANT
+  IT
+  MARKETING
+  SALES
+  CUSTOMER_SERVICE
+  SUPPORT
+  OTHER
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}

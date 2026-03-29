@@ -6,30 +6,3 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
-
-model User{
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  email String @unique
-  role UserRole
-  password String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  isVerified Boolean @default(false)
-  isBlocked Boolean @default(false)
-  lastPasswordChangedAt DateTime @default(now())
-  lastLoginAt DateTime @default(now())
-  lastLoginIP String @default("")
-}
-
-enum UserRole {
-  ADMIN
-  HR
-  MANAGER
-  EMPLOYEE
-}
-
-enum Gender {
-  MALE
-  FEMALE
-  OTHER
-}

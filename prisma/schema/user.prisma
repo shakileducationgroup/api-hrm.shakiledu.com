@@ -1,0 +1,52 @@
+model User {
+    id       String   @id @default(auto()) @map("_id") @db.ObjectId
+    email    String   @unique
+    role     UserRole
+    password String
+
+    isVerified            Boolean  @default(false)
+    isBlocked             Boolean  @default(false)
+    lastPasswordChangedAt DateTime @default(now())
+    lastLoginAt           DateTime @default(now())
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    /**
+     * Relation between user and profile
+     */
+    profile  Profile?
+    /**
+     * Relation between user and offices
+     */
+    officeId String?
+    office   Offices? @relation(fields: [officeId], references: [id])
+
+    /**
+     * Relation between user and departments
+     */
+    departmentId String?
+    department   Departments? @relation(fields: [departmentId], references: [id])
+}
+
+model Profile {
+    id          String   @id @default(auto()) @map("_id") @db.ObjectId
+    firstName   String
+    lastName    String
+    fullName    String
+    gender      Gender
+    dateOfBirth DateTime
+    phoneNumber String
+    userImage   String
+    position    String
+    department  String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    /**
+     * Relation between user and profile
+     */
+    user   User   @relation(fields: [userId], references: [id])
+    userId String @unique
+}

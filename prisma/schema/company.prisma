@@ -1,0 +1,42 @@
+model Offices{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  address String
+  city String
+  state String
+  zipCode String
+  phoneNumber String
+  email String
+  website String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  /**
+   * Relation between offices and user
+   */
+  users User[]
+
+  /**
+   * Relation between offices and departments
+   */
+  departments Departments[]
+}
+
+model Departments{
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  description String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  /**
+   * Relation between departments and user
+   */
+  users User[]
+
+  /**
+   * Relation between departments and offices
+   */
+  officeId String?
+  office Offices? @relation(fields: [officeId], references: [id])
+}

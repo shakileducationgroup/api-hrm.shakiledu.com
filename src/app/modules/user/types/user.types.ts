@@ -54,4 +54,32 @@ export const ROLE_CREATION_HIERARCHY: Record<UserRole, UserRole[]> = {
   [UserRole.EMPLOYEE]: [
     UserRole.EMPLOYEE,
   ],
+  [UserRole.ACCOUNTANT]: [
+    UserRole.ACCOUNTANT,
+    UserRole.EMPLOYEE,
+  ],
+  [UserRole.IT]: [
+    UserRole.IT,
+    UserRole.EMPLOYEE,
+  ],
+  [UserRole.MARKETING]: [
+    UserRole.MARKETING,
+    UserRole.EMPLOYEE,
+  ],
+  [UserRole.SALES]: [
+    UserRole.SALES,
+    UserRole.EMPLOYEE,
+  ],
+  [UserRole.CUSTOMER_SERVICE]: [
+    UserRole.CUSTOMER_SERVICE,
+    UserRole.EMPLOYEE,
+  ],
+  [UserRole.SUPPORT]: [
+    UserRole.SUPPORT,
+    UserRole.EMPLOYEE,
+  ],
+  [UserRole.OTHER]: [
+    UserRole.OTHER,
+    UserRole.EMPLOYEE,
+  ],
 };
